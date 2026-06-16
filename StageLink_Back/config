@@ -1,0 +1,6 @@
+[DEFAULT]
+user=ocid1.user.oc1..aaaaaaaauuwgqsxxllcti4cgraktdg3oqh5gc26tts37ehwex5pm72gy3dxa
+fingerprint=c8:4c:61:e6:be:6c:65:cb:8c:dc:cc:a3:52:d6:1c:a9
+tenancy=ocid1.tenancy.oc1..aaaaaaaas6s7zvsmajpng6utzwgoasv667a4q6j2l3qdotgtojrj4lnxpxia
+region=eu-paris-1
+key_file=r134797302@um5.ac.ma_2025-01-09T23_23_07.664Z.pem

@@ -9,5 +9,4 @@ public class StageLinkBackApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(StageLinkBackApplication.class, args);
 	}
-
 }

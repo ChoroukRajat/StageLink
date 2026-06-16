@@ -4,47 +4,57 @@ import jakarta.persistence.*;
 import lombok.*;
 
 
-import java.time.LocalDate;
-
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(name = "Utilisateur")
 public class Utilisateur {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_utilisateur")
     private Long idUtilisateur;
 
-    @Column(nullable = false, length = 50)
-    private String nom;
-
-    @Column(nullable = false, length = 50)
-    private String prenom;
-
-    @Column(nullable = false)
-    private LocalDate dateNaissance;
-
-    @Column(nullable = false)
-    private Boolean sexe; // Represented as true/false instead of 0/1
-
-    @Column(nullable = false, unique = true, length = 50)
+    @Column(length = 100,  unique = true)
     private String email;
 
-    @Column(nullable = false, unique = true, length = 50)
-    private String telephone;
-
-    @Column(nullable = false) // **Added field**
+    @Column(length = 255)
     private String password;
 
-    @Enumerated(EnumType.STRING)  // Store the enum as a string in the database
-    @Column(nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "role",  columnDefinition = "NUMBER")
     private Role role;
 
 
+    public Long getIdUtilisateur() {
+        return idUtilisateur;
+    }
 
-    public enum Role {
-        ADMIN, ETUDIANT, ECOLE, ENTREPRISE, CF, ENCADRANT, RESPO; // Add as many roles as you need
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }
+
